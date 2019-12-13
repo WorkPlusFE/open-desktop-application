@@ -1,6 +1,6 @@
 {
   "name": "@w6s/open-desktop-application",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "通过 URL协议 打开桌面应用",
   "main": "lib/@w6s/open-desktop-application.js",
   "main:min": "lib/@w6s/open-desktop-application.min.js",

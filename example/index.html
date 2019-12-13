@@ -8,29 +8,27 @@
 </head>
 <body>
     <div>
-        <button id="open-app">open-desktop-application</button>
+        <div id="open-app">open-desktop-application</div>
     </div>
     <script>
         window.onload = function() {
-            function handle() {
+            function handle(event) {
                 const params = {
-                    protocol: 'workplus',
-                    action: 'joinchat',
+                    protocol: 'mailto',
+                    action: 'johndoe@somewhere.com',
                     query: {
                         id: 1,
                         name: 'test',
                     },
                     fail: function(err) {
-                        console.log(err);
+                        alert('err');
                     },
                     success: function() {
-                        console.log('success');
+                        alert('success');
                     },
                 };
-
                 openDesktopApplication(params);
             };
-
             document.getElementById('open-app').addEventListener('click', handle, false);
         };
     </script>

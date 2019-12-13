@@ -10,7 +10,7 @@ yarn add @w6s/open-desktop-application
 npm install @w6s/open-desktop-application -S
 ```
 
-可以直接通过`script`标签引入，全局暴露`openDesktopApplication`方法，使用方法和参数跟下面的一致，详情请查看`example/index.html`。
+可以直接通过`script`标签引入，全局暴露`openDesktopApplication`方法，使用方法和参数跟下面的一致，详情请查看[example/index.html](https://github.com/WorkPlusFE/open-desktop-application/blob/master/example/index.html)。
 
 脚本资源请从[release页面](https://github.com/WorkPlusFE/open-desktop-application/releases)下载。
 

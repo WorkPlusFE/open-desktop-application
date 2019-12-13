@@ -22,7 +22,7 @@ import isObject from 'lodash.isobject';
  */
 function openDesktopApplication(params) {
     try {
-        const { target, protocol, action, query, fail, success } = params;
+        const { protocol, action, query, fail, success } = params;
         invariant(isString(protocol), '[protocol] Must be a non-empty string');
         invariant(isString(action), '[action] Must be a non-empty string');
         
