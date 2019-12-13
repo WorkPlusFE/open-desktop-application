@@ -4,7 +4,7 @@ import protocolDetection from 'custom-protocol-detection';
 import invariant from 'invariant';
 import { stringify } from '@w6s/query-string';
 import isString from 'lodash.isstring';
-import isFunction from 'lodash.isstring';
+import isFunction from 'lodash.isfunction';
 import isObject from 'lodash.isobject';
 
 /**
@@ -22,7 +22,7 @@ import isObject from 'lodash.isobject';
  */
 function openDesktopApplication(params) {
     try {
-        const { protocol, action, query, fail, success } = params;
+        const { target, protocol, action, query, fail, success } = params;
         invariant(isString(protocol), '[protocol] Must be a non-empty string');
         invariant(isString(action), '[action] Must be a non-empty string');
         
@@ -30,6 +30,7 @@ function openDesktopApplication(params) {
         if (isObject(query)) {
             openUri += `?${stringify(query)}`;
         }
+
         protocolDetection(
             openUri, 
             function failCb(e) {
@@ -43,6 +44,7 @@ function openDesktopApplication(params) {
             }
         );
     } catch (error) {
+        isFunction(fail) && fail(error);
         console.log(error);
     }
 }
