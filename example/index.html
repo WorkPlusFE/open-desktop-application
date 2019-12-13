@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo</title>
+    <script src="../lib/@w6s/open-desktop-application.min.js"></script>
+</head>
+<body>
+    <div>
+        <button id="open-app">open-desktop-application</button>
+    </div>
+    <script>
+        window.onload = function() {
+            function handle() {
+                const params = {
+                    protocol: 'workplus',
+                    action: 'joinchat',
+                    query: {
+                        id: 1,
+                        name: 'test',
+                    },
+                    fail: function(err) {
+                        console.log(err);
+                    },
+                    success: function() {
+                        console.log('success');
+                    },
+                };
+
+                openDesktopApplication(params);
+            };
+
+            document.getElementById('open-app').addEventListener('click', handle, false);
+        };
+    </script>
+</body>
+</html>

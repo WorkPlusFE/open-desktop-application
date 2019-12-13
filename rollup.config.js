@@ -1,6 +1,7 @@
 import path from'path';
 import babel from 'rollup-plugin-babel';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 import commonjs from 'rollup-plugin-commonjs';
 import filesize from 'rollup-plugin-filesize';
 import { uglify } from 'rollup-plugin-uglify';
@@ -26,7 +27,7 @@ const config = {
   output: [{
     file: resolveFile(pkg['main']),
     format: 'umd',
-    name: 'WorkPlus',
+    name: 'openDesktopApplication',
     banner: banner,
   }, {
     file: resolveFile(pkg['module']),
@@ -37,6 +38,7 @@ const config = {
 
 if (env === 'production') {
   config.plugins.push(
+    replace({ 'process.env.NODE_ENV' : '"production"' }),
     uglify({
       compress: {
         pure_getters: true,
@@ -58,7 +60,7 @@ if (env === 'production') {
   config.output = [{
     file: resolveFile(pkg['main:min']),
     format: 'umd',
-    name: 'WorkPlus',
+    name: 'openDesktopApplication',
     banner: banner,
   }];
 }

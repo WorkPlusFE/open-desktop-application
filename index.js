@@ -1,6 +1,7 @@
 'use strict';
 
 import protocolDetection from 'custom-protocol-detection';
+import invariant from 'invariant';
 import { stringify } from '@w6s/query-string';
 import isString from 'lodash.isstring';
 import isFunction from 'lodash.isstring';
