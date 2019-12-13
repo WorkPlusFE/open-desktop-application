@@ -1,4 +1,4 @@
-# @w6s/open-desktop-application
+# @w6s/open-desktop-application [![npm version](https://badge.fury.io/js/%40w6s%2Fopen-desktop-application.svg)](https://badge.fury.io/js/%40w6s%2Fopen-desktop-application)
 
 > 通过 URL协议 打开桌面应用
 
