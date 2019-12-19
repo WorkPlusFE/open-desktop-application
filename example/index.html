@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,12 +14,11 @@
     <script>
         window.onload = function() {
             function handle(event) {
-                const params = {
-                    protocol: 'mailto',
-                    action: 'johndoe@somewhere.com',
+                var params = {
+                    protocol: 'workplus',
+                    action: 'chat',
                     query: {
-                        id: 1,
-                        name: 'test',
+                        userId: '13078899530', // username
                     },
                     fail: function(err) {
                         alert('err');
